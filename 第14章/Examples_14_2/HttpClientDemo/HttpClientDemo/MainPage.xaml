@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="HttpClientDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HttpClientDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="HttpClient" FontSize="60" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <Button Content="Get String" Click="Button_Click_1" Width="370"></Button>
+                <Button Content="Get Stream" Click="Button_Click_2" Width="370"></Button>
+                <Button Content="Post String" Click="Button_Click_3" Width="370"></Button>
+                <Button Content="Post Stream" Click="Button_Click_4" Width="370"></Button>
+                <Button Content="请求进度监控" Click="Button_Click_5" Width="370"></Button>
+                <Button Content="Cookie 设置" Click="Button_Click_6" Width="370"></Button>
+                <Button Content="Cookie 获取" Click="Button_Click" Width="370"></Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.RowSpan="2" x:Name="waiting" Visibility="Collapsed">
+            <Grid Background="Black" Opacity="0.8" ></Grid>
+            <StackPanel Background="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2">
+                <TextBlock x:Name="infomation" Text="正在请求数据……" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                <Button Content="取消操作" x:Name="cancel" Click="cancel_Click" Width="370"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

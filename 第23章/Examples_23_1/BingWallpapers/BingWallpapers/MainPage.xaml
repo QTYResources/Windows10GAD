@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="BingWallpapers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BingWallpapers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!--定义了一个显示出用户自定义日期的面板的动画资源，动画的效果是从上往下拉出来-->
+        <Storyboard x:Name="showMorePicture">
+            <DoubleAnimation Storyboard.TargetName="topTransform" Storyboard.TargetProperty="Y" From="-300" To="0" Duration="0:0:0.3"></DoubleAnimation>
+        </Storyboard>
+    </Page.Resources>
+    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="SideBySideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topStackPanel.Orientation" Value="Horizontal"/>
+                        <Setter Target="topStackPanel.Height" Value="150"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Opacity="0.5" Grid.RowSpan="2">
+            <Grid.Background>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage x:Name="background"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
+            </Grid.Background>
+        </Grid>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,0,0,28">
+            <TextBlock Text="Bing壁纸" FontSize="20"  />
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <!--添加了5个HyperlinkButton控件，其中最后一个按钮会触发动画来显示出用户自定义日期的面板-->
+            <StackPanel VerticalAlignment="Bottom">
+                <HyperlinkButton Content="今天壁纸" x:Name="today" Click="today_Click"></HyperlinkButton>
+                <HyperlinkButton Content="昨天壁纸" x:Name="yesterday" Click="yesterday_Click"></HyperlinkButton>
+                <HyperlinkButton Content="2天前壁纸" x:Name="twodayago" Click="twodayago_Click"></HyperlinkButton>
+                <HyperlinkButton Content="3天前壁纸" x:Name="threedayago" Click="threedayago_Click"></HyperlinkButton>
+                <HyperlinkButton Content="更早的壁纸" x:Name="other" Click="other_Click"></HyperlinkButton>
+            </StackPanel>
+        </Grid>
+        <!--自定义日期的面板-->
+        <StackPanel x:Name="topStackPanel" Orientation="Vertical"  Grid.RowSpan="2" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="300" VerticalAlignment="Top">
+            <!--面板默认是在屏幕最上方顶上，用户一开始并看不到-->
+            <StackPanel.RenderTransform>
+                <TranslateTransform x:Name="topTransform" Y="-300"></TranslateTransform>
+            </StackPanel.RenderTransform>
+            <TextBlock Text="选择时间:"  Margin="12 30 0 0" VerticalAlignment="Center"></TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="12 30 0 0">
+                <!--使用两个AppBarButton来控制日期的增加和减少-->
+                <AppBarButton Icon="Remove" IsCompact="True" x:Name="minus_bar" Click="minus_bar_Click" VerticalAlignment="Center"/>
+                <TextBlock Text="4" x:Name="dayNumber" Margin="20 0 20 0" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                <AppBarButton Icon="Add" IsCompact="True" x:Name="plus_bar" Click="plus_bar_Click" VerticalAlignment="Center"/>
+                <TextBlock Text="天前的壁纸"  VerticalAlignment="Center" Margin="24 0 0 0"></TextBlock>
+            </StackPanel>
+            <!--通过按钮事件来触发跳转到壁纸详情列表页面-->
+            <Button Content="查看壁纸" x:Name="go" Click="go_Click"  Margin="20 30 0 0"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

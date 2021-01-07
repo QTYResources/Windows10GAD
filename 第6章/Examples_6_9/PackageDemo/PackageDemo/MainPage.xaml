@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="PackageDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PackageDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel>
+                <Button Content="获取安装包的根目录" x:Name="btGetFile" Click="btGetFile_Click" Margin="2"/>
+                <TextBlock Text="文件夹列表：" />
+                <ListBox x:Name="lbFolder" >
+                </ListBox>
+                <Button Content="打开选中的文件夹" x:Name="open" Click="open_Click" Margin="2"/>
+                <TextBlock Text="文件列表："/>
+                <ListBox x:Name="lbFile">
+                </ListBox>
+                <Button Content="在选中文件夹下创建测试文件" x:Name="create" Click="create_Click" Margin="2"/>
+                <Button Content="删除选中的文件" x:Name="delete" Click="delete_Click" Margin="2"/>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

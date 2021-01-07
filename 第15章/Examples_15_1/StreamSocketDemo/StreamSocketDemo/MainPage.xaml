@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="StreamSocketDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StreamSocketDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="StreamSocket" FontSize="60" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <Button Content="开始监听" Margin="12" x:Name="btStartListener" Click="btStartListener_Click" />
+                <Button Content="连接socket" Margin="12" x:Name="btConnectSocket" Click="btConnectSocket_Click" />
+                <TextBox Text="hello" x:Name="tbMsg"/>
+                <Button Content="发送消息" Margin="12" x:Name="btSendMsg" Click="btSendMsg_Click"  />
+                <Button Content="关闭" Margin="12" x:Name="btClose" Click="btClose_Click"  />
+                <ScrollViewer>
+                    <StackPanel x:Name="lbMsg">
+                        <TextBlock Text="收到的消息：" FontSize="20"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

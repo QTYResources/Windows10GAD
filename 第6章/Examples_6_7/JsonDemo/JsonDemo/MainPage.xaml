@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="JsonDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:JsonDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="填写你的个人你信息" FontSize="20"></TextBlock>
+            <TextBox x:Name="userName" Header="名字："></TextBox>
+            <TextBox x:Name="userAge" Header="年龄：" InputScope="Number"></TextBox>
+            <TextBlock Text="就读过的学校：" FontSize="20"></TextBlock>
+            <CheckBox Content="哈尔滨佛教学院" x:Name="school1"></CheckBox>
+            <CheckBox Content="蓝翔职业技术学院" x:Name="school2"></CheckBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="保存" x:Name="save" Click="save_Click"></Button>
+                <Button Content="获取保存的信息" x:Name="get" Click="get_Click"></Button>
+            </StackPanel>
+            <TextBlock x:Name="info" TextWrapping="Wrap" FontSize="20"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

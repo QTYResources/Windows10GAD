@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="AccountBook.AddAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AccountBook"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal">
+            <Button x:Name="backButton" Margin="12" Click="backButton_Click" Style="{StaticResource  NavigationBackButtonNormalStyle}" VerticalAlignment="Center"/>
+            <TextBlock Text="添加一笔记录" Margin="12 0 0 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <!--使用Pivot控件来布局-->
+        <Pivot x:Name="pivot" Grid.Row="1">
+            <!--收入模式的录用界面-->
+            <PivotItem  Header="收入">
+                <ScrollViewer>
+                    <Grid>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                            <TextBlock HorizontalAlignment="Left" Text="金额"/>
+                            <TextBox x:Name="textBox_Income" TextWrapping="Wrap" InputScope="Number" />
+                            <TextBlock HorizontalAlignment="Left" Text="说明"/>
+                            <TextBox x:Name="textBox_IncomeDesc"  TextWrapping="Wrap" InputScope="Chat" />
+                            <TextBlock HorizontalAlignment="Left" Text="类别"/>
+                            <ComboBox x:Name="listPickerIncome"></ComboBox>
+                            <TextBlock HorizontalAlignment="Left" Text="日期" />
+                            <DatePicker x:Name="DatePickerIncome"></DatePicker>
+                            <TextBlock HorizontalAlignment="Left" Text="时间"/>
+                            <TimePicker x:Name="TimePickerIncome"></TimePicker>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+            <!--支出模式的录入界面-->
+            <PivotItem Header="支出">
+                <ScrollViewer>
+                    <Grid>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                            <TextBlock HorizontalAlignment="Left" Text="金额"/>
+                            <TextBox x:Name="textBox_Expenses" TextWrapping="Wrap" InputScope="Number" />
+                            <TextBlock HorizontalAlignment="Left" Text="说明"/>
+                            <TextBox x:Name="textBox_ExpensesDesc"  TextWrapping="Wrap" InputScope="Chat"/>
+                            <TextBlock HorizontalAlignment="Left" Text="类别"/>
+                            <ComboBox x:Name="listPickerExpenses"></ComboBox>
+                            <TextBlock HorizontalAlignment="Left" Text="日期"/>
+                            <DatePicker x:Name="DatePickerExpenses"></DatePicker>
+                            <TextBlock HorizontalAlignment="Left" Text="时间"/>
+                            <TimePicker x:Name="TimePickerExpenses"></TimePicker>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="新增" Click="appbar_buttonAdd_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Images/appbar.add.rest.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="完成" Click="appbar_buttonFinish_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Images/appbar.finish.rest.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="取消" Click="appbar_buttonCancel_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Images/appbar.cancel.rest.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

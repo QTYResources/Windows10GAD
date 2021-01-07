@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="CanvasDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CanvasDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas Background="White">
+            <Canvas Height="400" Width="400" Canvas.Left="0" Canvas.Top="50" Background ="Gray"  Opacity="0.1"  />
+            <Canvas Height="360" Width="360" Canvas.Left="20" Canvas.Top="70" Background="Gray" Opacity="0.2" />
+            <Canvas Height="320" Width="320" Canvas.Left="40" Canvas.Top="90" Background="Gray" Opacity="0.3" />
+            <Canvas Height="280" Width="280" Canvas.Left="60" Canvas.Top="110" Background="Gray" Opacity="0.4" />
+            <Canvas Height="240" Width="240" Canvas.Left="80" Canvas.Top="130" Background="Gray" Opacity="0.5" />
+            <Canvas Height="200" Width="200" Canvas.Left="100" Canvas.Top="150" Background="Gray" Opacity="0.6" />
+            <Canvas Height="160" Width="160" Canvas.Left="120" Canvas.Top="170" Background="Black" Opacity="0.3" />
+            <Canvas Height="120" Width="120" Canvas.Left="140" Canvas.Top="190" Background="Black" Opacity="0.4" />
+            <Canvas Height="80" Width="80" Canvas.Left="160" Canvas.Top="210" Background="Black" Opacity="0.5" />
+            <Canvas Height="40" Width="40" Canvas.Left="180" Canvas.Top="230" Background="Black" Opacity="0.6" />
+        </Canvas>
+    </Grid>
+</Page>

@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="BingWallpapers.DayPicturesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BingWallpapers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!--绑定转换器：把国家代码转化国家的名称-->
+        <local:CountryNameConverter x:Key="CountryNameConverter" />
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal">
+            <Button x:Name="backButton" Margin="12" Click="backButton_Click" Style="{StaticResource  NavigationBackButtonNormalStyle}" VerticalAlignment="Center"/>
+            <TextBlock Text="不同国家壁纸列表" Margin="12 0 0 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <!--使用ItemsControl列表控件来显示壁纸的信息-->
+        <ItemsControl  Grid.Row="1"  x:Name="pictureList"  >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!--设置列表控件的项目水平排列-->
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <!--设置列表控件的面板为水平滚动-->
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility = "Visible">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!--列表控件模板绑定壁纸的显示和相关的信息-->
+                    <Grid Width="340">
+                        <Image Opacity="0.5"  Stretch="Uniform" >
+                            <Image.Source>
+                                <BitmapImage UriSource="{Binding imageUri}" ></BitmapImage>
+                            </Image.Source>
+                        </Image>
+                        <!--绑定国家代码-->
+                        <TextBlock FontSize="20" Text="{Binding countryCode,Converter={StaticResource CountryNameConverter}}" Margin="24 30 0 0"></TextBlock>
+                        <StackPanel Margin="24 90 0 0" >
+                            <!--绑定壁纸主题-->
+                            <TextBlock FontSize="20" Text="{Binding imgTitle}"  TextWrapping="Wrap"></TextBlock>
+                            <!--使用ListView列表绑定热点说明信息-->
+                            <ListView ItemsSource="{Binding hotspot}" Height="300">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" FontSize="15" TextWrapping="Wrap"></TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <!--保存和查看按钮-->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                            <AppBarButton Icon="View" Label="查看" x:Name="view" Click="view_Click"/>
+                            <AppBarButton Icon="Save" Label="保存" x:Name="save" Click="save_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--进度信息面板，在网络请求的过程显示，请问完成之后隐藏-->
+        <StackPanel VerticalAlignment="Center" x:Name="tips">
+            <!--进度条-->
+            <ProgressBar  x:Name="progress" ></ProgressBar>
+            <!--进度信息显示-->
+            <TextBlock Text="" x:Name="info" HorizontalAlignment="Center" FontSize="30" TextWrapping="Wrap"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

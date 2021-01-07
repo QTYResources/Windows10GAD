@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="BindingModeDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BindingModeDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="12">
+            <Slider Name="slider" Value="50" Maximum="400"/>
+            <TextBlock FontSize="25" Height="41"  Name="textBlock1" Text="OneTime" VerticalAlignment="Top" Width="112" />
+            <TextBox   Name="textBox1" Text="{Binding ElementName=slider, Path=Value,Mode=OneTime}"  Width="269" />
+            <TextBlock FontSize="25" Height="46" Name="textBlock2" Text="OneWay" VerticalAlignment="Top" Width="99" />
+            <TextBox  Name="textBox2" Text="{Binding ElementName=slider, Path=Value,Mode=OneWay}" Width="269" />
+            <TextBlock FontSize="25" Height="40"  Name="textBlock3" Text="TwoWay" VerticalAlignment="Top" Width="94" />
+            <TextBox   Name="textBox3" Text="{Binding ElementName=slider, Path=Value,Mode=TwoWay}" Width="268" />
+            <TextBlock FontSize="25" Height="43"  Name="textBlock4" Text="slider控件的值：" />
+            <TextBlock FontSize="25" Height="43" Name="textBlock5" Text="{Binding ElementName=slider, Path=Value}"  Width="185" />
+        </StackPanel>
+    </Grid>
+</Page>

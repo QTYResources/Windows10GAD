@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="AccountBook.ChartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AccountBook"
+    xmlns:amq="using:AmCharts.Windows.QuickCharts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"  VerticalAlignment="Top" Orientation="Horizontal">
+            <Button x:Name="backButton" Margin="12" Click="backButton_Click" Style="{StaticResource  NavigationBackButtonNormalStyle}" VerticalAlignment="Center"/>
+            <TextBlock Text="图表分析" Margin="12 0 0 0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <Pivot Grid.Row="1">
+            <PivotItem Header="圆饼图">
+                <Grid>
+                    <amq:PieChart x:Name="pie1" TitleMemberPath="TypeName" ValueMemberPath="Sum" ></amq:PieChart>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="柱形图">
+                <Grid>
+                    <amq:SerialChart x:Name="chart1" CategoryValueMemberPath="TypeName"
+                            AxisForeground="White"
+                            PlotAreaBackground="Black"
+                            GridStroke="DarkGray">
+                        <amq:SerialChart.Graphs>
+                            <amq:ColumnGraph ValueMemberPath="Sum" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
+                        </amq:SerialChart.Graphs>
+                    </amq:SerialChart>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

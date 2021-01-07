@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="CheckBoxDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CheckBoxDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <CheckBox x:Name="McCheckBox1" Foreground="Orange" Content="Check Me" FontFamily="Georgia" FontSize="20" FontWeight="Bold" />
+            <CheckBox x:Name="McCheckBox3" Content="Check Me" IsChecked="True" Checked="McCheckBox_Checked" Unchecked="McCheckBox_Unchecked" />
+        </StackPanel>
+    </Grid>
+</Page>

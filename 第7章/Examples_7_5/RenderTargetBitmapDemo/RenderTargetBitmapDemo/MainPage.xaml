@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="RenderTargetBitmapDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RenderTargetBitmapDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          PointerReleased="Grid_PointerReleased">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="我的应用程序" FontSize="20"  />
+            <TextBlock Text="点击截屏" FontSize="60" />
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
+            <Image x:Name="img" />
+        </Grid>
+    </Grid>
+</Page>

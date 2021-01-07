@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="_3DOffsetDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_3DOffsetDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                       Text="3D"
+                       FontSize="120"
+                       Foreground="Red"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+            <TextBlock.Projection>
+                <PlaneProjection x:Name="planeProjection" RotationX="45" />
+            </TextBlock.Projection>
+        </TextBlock>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="globalRadioButton" Content="GlobalOffset" IsChecked="true"></RadioButton>
+                <RadioButton x:Name="localRadioButton" Content="LocalOffset"></RadioButton>
+            </StackPanel>
+            <TextBlock x:Name="infoTextBlock" TextWrapping="Wrap"></TextBlock>
+            <TextBlock x:Name="xTextBlock" Text="X轴偏移"></TextBlock>
+            <Slider x:Name="xSlider" Minimum="0" Maximum="100" ValueChanged="xSlider_ValueChanged" ></Slider>
+            <TextBlock x:Name="yTextBlock" Text="Y轴偏移"></TextBlock>
+            <Slider x:Name="ySlider" Minimum="0" Maximum="100" ValueChanged="ySlider_ValueChanged"></Slider>
+            <TextBlock x:Name="zTextBlock" Text="Z轴偏移"></TextBlock>
+            <Slider x:Name="zSlider" Minimum="0" Maximum="100" ValueChanged="zSlider_ValueChanged"></Slider>
+        </StackPanel>
+    </Grid>
+</Page>

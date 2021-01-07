@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="TextBoxDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TextBoxDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBox InputScope="TelephoneNumber">
+                <TextBox.Header>
+                    请输入电话号码：
+                </TextBox.Header>
+            </TextBox>
+            <TextBox x:Name="TextBox1" TextWrapping="Wrap" AcceptsReturn ="true" Header="输入信息："
+                            SelectionHighlightColor="Red"
+                            TextChanged="TextBox1_TextChanged"
+                            SelectionChanged="TextBox1_SelectionChanged"
+                            Paste="TextBox1_Paste"/>
+            <TextBlock x:Name="textBlock2" Text="操作信息:" FontSize="20"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</Page>

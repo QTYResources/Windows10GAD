@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="RenderingDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RenderingDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas Background="Gray" PointerMoved="Canvas_PointerMoved_1">
+            <Rectangle x:Name="rectangle" Height="50" Width="100" RadiusX="12.5" RadiusY="12.5" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Black" Offset="0"></GradientStop>
+                        <GradientStop Color="White" Offset="0.5"></GradientStop>
+                        <GradientStop Color="Black" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Canvas>
+    </Grid>
+</Page>

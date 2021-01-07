@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="BluetoothDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BluetoothDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="查找蓝牙应用" FontSize="40" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <Button x:Name="btFindBluetooth" Content="通过蓝牙查找该应用设备" Click="btFindBluetooth_Click"/>
+                <ListBox x:Name="lbBluetoothApp"  ItemsSource="{Binding}" >
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock  Text="{Binding DisplayName}" />
+                                <TextBlock  Text="{Binding ServiceName}" />
+                                <Button Content="连接" HorizontalAlignment="Left" Width="308" Height="91" Click="btConnect_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

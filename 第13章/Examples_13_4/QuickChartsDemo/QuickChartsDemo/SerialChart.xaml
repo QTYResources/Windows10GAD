@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="QuickChartsDemo.SerialChart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuickChartsDemo"
+     xmlns:amq="using:AmCharts.Windows.QuickCharts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="我的应用程序" FontSize="20"  />
+            <TextBlock Text="页面名称" FontSize="60" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <amq:SerialChart x:Name="chart1" DataSource="{Binding Data}" CategoryValueMemberPath="cat1"
+                            AxisForeground="White"
+                            PlotAreaBackground="Black"
+                            GridStroke="DarkGray">
+                <amq:SerialChart.Graphs>
+                    <amq:LineGraph ValueMemberPath="val1" Title="Line #1" Brush="Blue" />
+                    <amq:ColumnGraph ValueMemberPath="val2" Title="Column #2" Brush="#8000FF00" ColumnWidthAllocation="0.4" />
+                    <amq:AreaGraph ValueMemberPath="val3" Title="Area #1" Brush="#80FF0000" />
+                </amq:SerialChart.Graphs>
+            </amq:SerialChart>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="WindRTAsyncDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindRTAsyncDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <Button Content="测试运行时的方法" Click="Button_Click_1" Margin="12"></Button>
+            <Button Content="异步调用" Click="Button_Click_2"  Margin="12"></Button>
+            <Button Content="测试进度条" Click="Button_Click_3"  Margin="12"></Button>
+            <ProgressBar x:Name="progressBar" Height="30"></ProgressBar>
+        </StackPanel>
+    </Grid>
+</Page>

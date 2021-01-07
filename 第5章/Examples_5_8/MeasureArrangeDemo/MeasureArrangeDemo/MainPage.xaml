@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="MeasureArrangeDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MeasureArrangeDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <Button Content="改变高度" Click="Button_Click_1"></Button>
+            <local:TestPanel x:Name="panel" Height="400" Width="400" Background="White" >
+                <local:TestUIElement  x:Name="element1" Width="60" Height="60" Background="Red" Margin="10"/>
+                <local:TestUIElement x:Name="element2"  Width="60" Height="60" Background="Red" />
+            </local:TestPanel>
+        </StackPanel>
+    </Grid>
+</Page>

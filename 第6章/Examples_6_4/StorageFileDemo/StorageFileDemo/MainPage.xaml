@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="StorageFileDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StorageFileDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBox Header="文件信息：" x:Name="info" TextWrapping="Wrap"></TextBox>
+            <Button x:Name="bt_save" Content="保存" Margin="2" Click="bt_save_Click"></Button>
+            <Button x:Name="bt_read" Content="读取保存的文件" Margin="2" Click="bt_read_Click"></Button>
+            <Button x:Name="bt_delete" Content="删除文件" Margin="2" Click="bt_delete_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

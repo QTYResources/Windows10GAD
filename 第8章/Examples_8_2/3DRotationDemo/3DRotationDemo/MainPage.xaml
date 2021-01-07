@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="_3DRotationDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_3DRotationDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                       Text="3D"
+                       FontSize="120"
+                       Foreground="Red"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+            <TextBlock.Projection>
+                <PlaneProjection x:Name="planeProjection" />
+            </TextBlock.Projection>
+        </TextBlock>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rotationRadioButton" Content="Rotation" Checked="rotationRadioButton_Checked"></RadioButton>
+                <RadioButton x:Name="centerOfRotationRadioButton" Content="CenterOfRotation" Checked="centerOfRotationRadioButton_Checked"></RadioButton>
+            </StackPanel>
+            <TextBlock x:Name="infoTextBlock" TextWrapping="Wrap"></TextBlock>
+            <TextBlock x:Name="xTextBlock" Text="沿着X轴旋转"></TextBlock>
+            <Slider x:Name="xSlider" Minimum="0" Maximum="100" ValueChanged="xSlider_ValueChanged" ></Slider>
+            <TextBlock x:Name="yTextBlock" Text="沿着Y轴旋转"></TextBlock>
+            <Slider x:Name="ySlider" Minimum="0" Maximum="100" ValueChanged="ySlider_ValueChanged"></Slider>
+            <TextBlock x:Name="zTextBlock" Text="沿着Z轴旋转"></TextBlock>
+            <Slider x:Name="zSlider" Minimum="0" Maximum="100" ValueChanged="zSlider_ValueChanged"></Slider>
+        </StackPanel>
+    </Grid>
+</Page>

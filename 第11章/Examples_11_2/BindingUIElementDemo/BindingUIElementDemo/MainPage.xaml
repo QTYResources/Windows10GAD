@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="BindingUIElementDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BindingUIElementDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="12">
+            <TextBlock FontSize="25"  Name="textBlock1" Text="圆形的半径会根据slider控件的值而改变" />
+            <Slider Name="slider" Value="50" Maximum="400"/>
+            <TextBlock FontSize="25" Name="textBlock2" Text="半径为:"/>
+            <TextBlock Name="txtblk" Text="{Binding ElementName=slider, Path=Value}" FontSize="48"/>
+            <Ellipse  Height="{Binding ElementName=slider, Path=Value}" 
+                      Width="{Binding ElementName=slider, Path=Value}"
+                      Fill="Red" Name="ellipse1" Stroke="Black" StrokeThickness="1"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="ScrollViewerDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScrollViewerDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <ScrollViewer Name="scrollViewer1"  VerticalScrollBarVisibility="Hidden" Height="300">
+                <StackPanel Name="stkpnlImage" />
+            </ScrollViewer>
+            <Button Content="往上" FontSize="30" Click="btnUp_Click" />
+            <Button Content="往下" FontSize="30" Click="btnDown_Click"  />
+            <Button Content="停止" FontSize="30" Click="stop_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

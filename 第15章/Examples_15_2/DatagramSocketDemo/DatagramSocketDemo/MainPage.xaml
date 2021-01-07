@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="DatagramSocketDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DatagramSocketDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="DatagramSocket" FontSize="60" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <Button Content="开始监听消息" Margin="12" x:Name="listener" Click="listener_Click"></Button>
+                <Button Content="发送消息" Margin="12" x:Name="send" Click="send_Click"></Button>
+                <Button Content="关闭" Margin="12" x:Name="close" Click="close_Click"></Button>
+                <ScrollViewer Height="300">
+                    <StackPanel x:Name="msgList" ></StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

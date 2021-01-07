@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="BluetoothDeviceDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BluetoothDeviceDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,35,0,28">
+            <TextBlock Text="查找蓝牙设备" FontSize="40" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <Button x:Name="btFindBluetooth" Content="查找特定的蓝牙设备" Click="btFindBluetooth_Click" Margin="12"/>
+                <Button x:Name="btFindAllBluetooth" Content="查找周围的蓝牙设备" Click="btFindAllBluetooth_Click" Margin="12"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

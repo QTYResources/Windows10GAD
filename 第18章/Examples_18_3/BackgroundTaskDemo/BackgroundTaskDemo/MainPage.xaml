@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="BackgroundTaskDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BackgroundTaskDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12">
+            <TextBlock Text="监控后台任务" FontSize="60" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Name="progressInfo" TextWrapping="Wrap"/>
+                <TextBlock Name="statusInfo" TextWrapping="Wrap"/>
+                <TextBlock Name="workCostInfo" TextWrapping="Wrap"/>
+                <Button Name="btnRegister" Content="注册一个后台任务" Margin="12" Click="btnRegister_Click_1" />
+                <Button x:Name="btnUnregister" Content="取消注册的后台任务" Margin="12" Click="btnUnregister_Click_1" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="TransferDownloadDemo.BackgroundTransferList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TransferDownloadDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem  Header="正在下载文件">
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnPause" Content="暂停"  Click="btnPause_Click" />
+                        <Button x:Name="btnResume" Content="继续" Click="btnResume_Click" />
+                        <Button x:Name="btnCancel" Content="取消" Click="btnCancel_Click" />
+                    </StackPanel>
+                    <!--正在下载文件的列表-->
+                    <ListView x:Name="TransferList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Source}"  FontWeight="Bold" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Destination}"  FontWeight="Bold" TextWrapping="Wrap"/>
+                                    <ProgressBar Value="{Binding Progress}"></ProgressBar>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="bytes received: "/>
+                                        <TextBlock Text="{Binding BytesReceived}" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="total bytes: "/>
+                                        <TextBlock Text="{Binding TotalBytesToReceive}" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="文件列表">
+                <Grid Margin="12,0,12,0">
+                    <ListView x:Name="FileList">
+                        <ListView.ItemTemplate>
+                            <!--已下载文件的列表-->
+                            <DataTemplate>
+                                <StackPanel Margin="0 0 0 30">
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding DateCreated}" Opacity="0.5"  />
+                                    <TextBlock Text="{Binding Path}" TextWrapping="Wrap" Opacity="0.5"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

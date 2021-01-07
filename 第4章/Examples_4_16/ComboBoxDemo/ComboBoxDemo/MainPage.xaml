@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="ComboBoxDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComboBoxDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <ComboBox Header="Colors" PlaceholderText="Pick a color"   >
+                <x:String>Blue</x:String>
+                <x:String>Green</x:String>
+                <x:String>Red</x:String>
+                <x:String>Yellow</x:String>
+            </ComboBox>
+            <ComboBox  x:Name="comboBox2" DropDownClosed="comboBox2_DropDownClosed" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" FontSize="30" />
+                            <TextBlock Text="{Binding Age}" Margin="50 10 0 0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock x:Name="Info" FontSize="20"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

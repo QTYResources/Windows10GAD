@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="FileAssociationDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FileAssociationDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12">
+            <TextBlock Text=".log文件内容" FontSize="40" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Text="文件名字："></TextBlock>
+                <TextBlock x:Name="fileName"></TextBlock>
+                <TextBlock Text="文件内容："></TextBlock>
+                <TextBlock x:Name="fileContent" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

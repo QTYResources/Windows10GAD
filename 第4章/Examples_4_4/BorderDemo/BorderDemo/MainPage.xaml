@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="BorderDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BorderDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <Border Background="Coral"  Padding="10" CornerRadius="30,38,150,29" BorderThickness="8 15 10 2" BorderBrush="Azure"></Border>
+            <Border BorderThickness="1,3,5,7" BorderBrush="Blue" CornerRadius="10" Width="200" >
+                <TextBlock Text="蓝色的Border" ToolTipService.ToolTip="这是蓝色的Border吗？" FontSize="30"  TextAlignment="Center" />
+            </Border>
+            <Border x:Name="TextBorder" BorderThickness="10">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="Red" Opacity="0"/>
+                </Border.BorderBrush>
+                <TextBlock Text="请单击一下我！" PointerPressed="TextBlock_PointerPressed" FontSize="20"/>
+            </Border>
+            <Border x:Name="brdTest" BorderThickness="4" Width="200" Height="150" >
+                <Border.BorderBrush>
+                    <LinearGradientBrush x:Name="borderLinearGradientBrush" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" EndPoint="0.5,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="Yellow" Offset="0" />
+                            <GradientStop Color="Blue" Offset="1" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

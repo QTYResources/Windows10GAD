@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="ShoppingListDemo.AddItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShoppingListDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel" Orientation="Horizontal" Grid.Row="0" Margin="12,35,0,28">
+            <Button x:Name="backButton"  Click="backButton_Click" Style="{StaticResource  NavigationBackButtonNormalStyle}"/>
+            <TextBlock Text="添加商品" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="346*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="名称:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Name="nameTxt"  Grid.Column="1" Grid.Row="0" MaxHeight="40" />
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="价格:"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox x:Name="priceTxt" Grid.Column="1" Grid.Row="1" MaxHeight="40" />
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="数量:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBox Name="quanTxt" Grid.Column="1" Grid.Row="2" MaxHeight="40"/>
+            <Button x:Name="BtnSave" Content="保存"   HorizontalAlignment="Stretch" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Top" Click="BtnSave_Click" />
+        </Grid>
+    </Grid>
+</Page>

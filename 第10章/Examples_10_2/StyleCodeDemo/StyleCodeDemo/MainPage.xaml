@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="StyleCodeDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StyleCodeDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!--<Style x:Key="style1"  TargetType="Button">
+            <Setter Property="Height" Value="70" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="Blue" />
+        </Style>
+        <Style x:Key="style2"  TargetType="Button">
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="Background" Value="Yellow" />
+        </Style>-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+        <Grid x:Name="ContentPanel" Margin="12">
+            <StackPanel>
+                <Button Content="点击按钮更换样式" x:Name="buton1" Click="buton1_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

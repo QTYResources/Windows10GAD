@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="LauncherDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LauncherDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12">
+            <TextBlock Text="系统内置应用" FontSize="40" />
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBox Header="请输入网址：" x:Name="web" Text="http://www.baidu.com"></TextBox>
+                <Button Content="打开网址" Click="Button_Click_1" HorizontalAlignment="Center" Margin="12"></Button>
+                <TextBox Header="请输入电话号码：" x:Name="phone" Text="123456789"></TextBox>
+                <Button Content="拨打电话" Click="Button_Click_2" HorizontalAlignment="Center" Margin="12"></Button>
+                <ComboBox Header="选择要启动的系统页面：" x:Name="comboBox" SelectedIndex="0">
+                    <ComboBoxItem Content="飞行模式设置" />
+                    <ComboBoxItem Content="蓝牙设置" />
+                    <ComboBoxItem Content="手机网络设置" />
+                    <ComboBoxItem Content="电子邮件和帐户设置" />
+                    <ComboBoxItem Content="位置设置" />
+                    <ComboBoxItem Content="锁屏设置" />
+                    <ComboBoxItem Content="Wi-Fi设置" />
+                    <ComboBoxItem Content="屏幕旋转设置" />
+                    <ComboBoxItem Content="节电模式设置" />
+                </ComboBox>
+                <Button Content="启动系统的应用" Click="Button_Click_3" HorizontalAlignment="Center" Margin="12"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

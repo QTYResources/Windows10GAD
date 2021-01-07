@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="RadioButtonDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RadioButtonDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock FontSize="34" Height="57" Name="textBlock1" Text="你喜欢哪一个品牌的手机?" />
+            <RadioButton GroupName="MCSites" Background="Yellow" Foreground="Blue" Content="A、诺基亚"  Click="RadioButton_Click" Name="a"/>
+            <RadioButton GroupName="MCSites" Background="Yellow" Foreground="Orange" Content="B、苹果"  Click="RadioButton_Click" Name="b" />
+            <RadioButton GroupName="MCSites" Background="Yellow" Foreground="Green" Content="C、HTC"  Click="RadioButton_Click" Name="c"/>
+            <RadioButton GroupName="MCSites" Background="Yellow" Foreground="Purple" Content="D、其他的"  Click="RadioButton_Click" Name="d"/>
+            <TextBlock FontSize="34" Height="57" Name="textBlock2" Text="你选择的答案是：" />
+            <TextBlock FontSize="34" Height="57" Name="answer" />
+        </StackPanel>
+    </Grid>
+</Page>

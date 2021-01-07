@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="PositionChangedDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PositionChangedDemo"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <Maps:MapControl x:Name="myMap" Height="450" ZoomLevel="10"/>
+            <Button x:Name="getlocation" Content="跟踪位置的变化" Click="getlocation_Click"></Button>
+            <TextBlock x:Name="tbLatitude"></TextBlock>
+            <TextBlock x:Name="tbLongitude"></TextBlock>
+            <TextBlock x:Name="tbAccuracy"></TextBlock>
+            <TextBlock x:Name="tbStatus"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

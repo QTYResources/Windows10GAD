@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="StyleDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StyleDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid x:Name="ContentPanel" Margin="12">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style x:Key="commonStyle" TargetType="FrameworkElement">
+                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Height" Value="100"></Setter>
+                        <!--<Setter Property="FontSize"  Value="20"></Setter>
+            <Setter Property="Foreground" Value="Green"></Setter>
+            <Setter Property="Background"  Value="Red"></Setter>
+            <Setter Property="FontFamily" Value="Arial"></Setter>-->
+                    </Style>
+                    <Style x:Key="textBlockStyle" BasedOn="{StaticResource commonStyle}"  TargetType="TextBlock">
+                        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                    </Style>
+                    <Style x:Key="buttonStyle" BasedOn="{StaticResource commonStyle}" TargetType="Button">
+                        <Setter Property="FontSize"  Value="20"></Setter>
+                        <Setter Property="Foreground" Value="Green"></Setter>
+                        <Setter Property="Background"  Value="Red"></Setter>
+                        <Setter Property="FontFamily" Value="Arial"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Content="按钮1" Width="200" Height="100" FontSize="20" Foreground="Green" Background="Red" FontFamily="Arial"  Margin="10"/>
+                <Button Content="按钮1" Style="{StaticResource buttonStyle}"/>
+                <Button Content="按钮2" Style="{StaticResource commonStyle}"/>
+                <Button Content="按钮3" Style="{StaticResource commonStyle}"/>
+                <TextBlock Text="TextBlock1" TextWrapping="Wrap"  Style="{StaticResource textBlockStyle}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

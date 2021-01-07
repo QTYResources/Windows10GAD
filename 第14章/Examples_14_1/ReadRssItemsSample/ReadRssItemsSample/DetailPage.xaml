@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="ReadRssItemsSample.DetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReadRssItemsSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Orientation="Horizontal" Grid.Row="0" Margin="12,35,0,28">
+            <Button x:Name="backButton"  Click="backButton_Click" Style="{StaticResource  NavigationBackButtonNormalStyle}"/>
+            <TextBlock Text="{Binding Title}" FontSize="25" TextWrapping="Wrap" Margin="12"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Text="{Binding PublishedDate}" FontSize="15" Opacity="0.5" />
+                <TextBlock Text="{Binding Url}" FontSize="15" Opacity="0.5" />
+                <ScrollViewer Height="500">
+                    <TextBlock Text="{Binding PlainSummary}" FontSize="20" TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

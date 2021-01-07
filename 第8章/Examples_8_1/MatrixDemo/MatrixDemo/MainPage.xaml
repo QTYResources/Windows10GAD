@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="MatrixDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MatrixDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Canvas  Background="Black">
+            <Rectangle Width="200" Height="200"  Fill="Red">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform  Matrix="1,-0.5,0,1.0,60,100" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle   Width="200" Height="200" Fill="FloralWhite">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform  Matrix="1.0,0.5,0,1.0,260,0" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle  Width="200" Height="200"  Fill="Green">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform Matrix="1,0.5,-1,0.5,260,200"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+    </Grid>
+</Page>
